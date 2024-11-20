@@ -2,13 +2,19 @@ Alias: $Comunas = https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL
 Alias: $Provincias = https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL
 Alias: $Regiones = https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL
 Alias: $Sexo-Nac = https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSSexoListadoDeis
-Alias: $Prais = https://tipogarantia.cl/prais
-Alias: $Prevision = https://tipogarantia.cl/prevision
+
+
 Alias: $Especialidades = https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL
 Alias: $Razones = https://fonasa.cl/razones
 Alias: $Sospecha = https://fonasa.cl/sospecha
 Alias: $Examen = https://fonasa.cl/examen
 Alias: $Estado-Caso = https://fonasa.cl/estadocaso
+Alias: $Marca = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSMArca
+Alias: $Marca = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSMArca
+Alias: $Exam = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSExamenes
+Alias: $Prevision = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSPrevision
+Alias: $ProbSalud = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSProbSalud
+Alias: $TipoDoc = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSTipoDoc
 
 Instance: Caso1
 InstanceOf: DatosSigesCG
@@ -16,6 +22,9 @@ Title: "Ejemplo formulario de Creación"
 Description: "Ejemplo de datos para la creación de un formulario"
 
 Usage: #example
+
+* extension[TipoDoc].url = "https://hl7chile.cl/fhir/ig/sigescg/StructureDefinition/TipoDoc"
+* extension[TipoDoc].valueCodeableConcept = $TipoDoc#1 "Solicitud de interconsulta SIC"
 
 * identifier.value = "FFBA223B"
 * identifier.system = "http://fonasa.cl/verificacion/identificador"
@@ -28,85 +37,75 @@ Usage: #example
 * item[0].linkId = "datosPaciente"
 
 
-* item[0].item[0].linkId = "identificacionPac"
+* item[=].item[0].linkId = "identificacionPac"
 
 
 
 
-* item[0].item[0].item[0].linkId = "runPac"
-* item[0].item[0].item[0].answer.valueString = "66.666.666"
-* item[0].item[0].item[+].linkId = "verificador"
-* item[0].item[0].item[=].answer.valueString = "k"
+* item[=].item[0].item[0].linkId = "runPac"
+* item[=].item[0].item[0].answer.valueString = "66.666.666"
+* item[=].item[0].item[+].linkId = "verificador"
+* item[=].item[0].item[=].answer.valueString = "k"
 
-* item[0].item[1].linkId = "nombreRegistrado"
-
-
-* item[0].item[1].item[0].linkId = "primerApellido"
-* item[0].item[1].item[0].answer.valueString = "EjemploAp"
-* item[0].item[1].item[1].linkId = "segundoApellido"
-* item[0].item[1].item[1].answer.valueString = "EjemploSegundo"
-* item[0].item[1].item[2].linkId = "nombresPac"
-* item[0].item[1].item[2].answer[0].valueString = "nombre1"
-* item[0].item[1].item[2].answer[+].valueString = "nombre2"
-
-* item[0].item[2].linkId = "direccionPac"
+* item[=].item[+].linkId = "nombreRegistrado"
 
 
-* item[0].item[2].item[0].linkId = "calleNumeroDirPac"
-* item[0].item[2].item[0].answer.valueString = "Calle mia, 666, casa C"
+* item[=].item[=].item[0].linkId = "primerApellido"
+* item[=].item[=].item[0].answer.valueString = "EjemploAp"
+* item[=].item[=].item[1].linkId = "segundoApellido"
+* item[=].item[=].item[1].answer.valueString = "EjemploSegundo"
+* item[=].item[=].item[2].linkId = "nombresPac"
+* item[=].item[=].item[2].answer[0].valueString = "nombre1"
+* item[=].item[=].item[2].answer[+].valueString = "nombre2"
 
-* item[0].item[2].item[1].linkId = "communaDirPac"
-* item[0].item[2].item[1].answer.valueCoding = $Comunas#13402 "Buin"
-
-
-* item[0].item[2].item[2].linkId = "provinciaDirPac"
-* item[0].item[2].item[2].answer.valueCoding.system = $Provincias#131 "Santiago"
-
-
-* item[0].item[2].item[3].linkId = "regionDirPac"
-* item[0].item[2].item[3].answer.valueCoding.system = $Regiones#13 "Metropolitana de Santiago"
+* item[=].item[+].linkId = "direccionPac"
 
 
-* item[0].item[3].linkId = "datoContactoPac"
+* item[=].item[=].item[0].linkId = "calleNumeroDirPac"
+* item[=].item[=].item[0].answer.valueString = "Calle mia, 666, casa C"
+
+* item[=].item[=].item[1].linkId = "communaDirPac"
+* item[=].item[=].item[1].answer.valueCoding = $Comunas#13402 "Buin"
 
 
-* item[0].item[3].item[0].linkId = "emailPac"
-* item[0].item[3].item[0].answer.valueString = "yo@yo.cl"
-
-* item[0].item[3].item[1].linkId = "numeroTelPac"
-* item[0].item[3].item[1].answer.valueString = "+56 9666666"
-
-* item[1].linkId = "datosDemogAdic"
+* item[=].item[=].item[2].linkId = "provinciaDirPac"
+* item[=].item[=].item[2].answer.valueCoding.system = $Provincias#131 "Santiago"
 
 
-* item[1].item[0].linkId = "sexoNacimiento"
-* item[1].item[0].answer.valueCoding = $Sexo-Nac#93 "No Informado"
+* item[=].item[=].item[3].linkId = "regionDirPac"
+* item[=].item[=].item[3].answer.valueCoding.system = $Regiones#13 "Metropolitana de Santiago"
 
 
-* item[1].item[1].linkId = "fechaNacimiento"
-* item[1].item[1].answer.valueDate = "1980-05-22"
-
-* item[1].item[2].linkId = "edadPaciente"
-* item[1].item[2].answer.valueInteger = 35
-
-* item[2].linkId = "garantiaPac"
+* item[=].item[+].linkId = "datoContactoPac"
 
 
-* item[2].item[0].linkId = "tipoGarantia"
+* item[=].item[=].item[0].linkId = "emailPac"
+* item[=].item[=].item[0].answer.valueString = "yo@yo.cl"
+
+* item[=].item[=].item[1].linkId = "numeroTelPac"
+* item[=].item[=].item[1].answer.valueString = "+56 9666666"
+
+* item[=].item[+].linkId = "datosDemogAdic"
 
 
-* item[2].item[0].item[0].linkId = "codigoPrais"
-* item[2].item[0].item[0].answer.valueCoding.system = $Prais#12 "G1"
+* item[=].item[=].item[0].linkId = "sexoNacimiento"
+* item[=].item[=].item[=].answer.valueCoding = $Sexo-Nac#93 "No Informado"
 
 
-* item[2].item[1].linkId = "previsionPac"
+* item[=].item[=].item[+].linkId = "fechaNacimiento"
+* item[=].item[=].item[=].answer.valueDate = "1980-05-22"
 
+* item[=].item[=].item[+].linkId = "edadPaciente"
+* item[=].item[=].item[=].answer.valueInteger = 35
 
-* item[2].item[1].item[0].linkId = "tipoPrevision"
-* item[2].item[1].item[0].answer.valueCoding.system = $Prevision#01 "A"
+* item[=].item[+].linkId = "garantiaPac"
 
+* item[=].item[=].item[0].linkId = "codigoMarca"
+* item[=].item[=].item[=].answer.valueCoding = $Marca#01 "PRAIS"
 
-* item[3].linkId = "solicitudCaso"
+* item[=].item[=].item[=].answer.valueCoding = $Prevision#01 "FONASA"
+
+* item[+].linkId = "solicitudCaso"
 
 
 * item[=].item[0].linkId = "fechas"

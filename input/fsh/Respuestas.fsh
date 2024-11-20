@@ -4,6 +4,8 @@ Id:             datos-sigges-formularios
 Title:          "Datos de Notificación de Casos Siges"
 Description:    "Perfil de datos relacionados con el seguimiento de un Caso de Notificación Siges de Cancer Gástrico"
 
+* extension contains TipoDoc named TipoDoc 1..1 MS
+
 * identifier 1..1 MS 
 * identifier.value 1..1 MS
 * identifier ^short = "Identificador único para este set de respuestas"
