@@ -218,7 +218,7 @@ Usage: #example
 * item[=].item[=].item[+].linkId = "hipotesisDiagnostica"
 * item[=].item[=].item[=].text = "Diagnóstico del cual se sospecha el paciente tiene"
 * item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "CSProbSalud"
+* item[=].item[=].item[=].answerValueSet = "VSProbSalud"
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "fundamentoDiagnostico"

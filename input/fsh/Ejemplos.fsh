@@ -211,3 +211,100 @@ Usage: #example
 * item[=].item[=].item[=].answer.valueString = "El"
 
     
+
+
+
+
+Instance: Caso2
+InstanceOf: DatosSigesCG
+Title: "Ejemplo formulario de Creación"
+Description: "Ejemplo de datos para la creación de un formulario"
+
+Usage: #example
+
+* extension[TipoDoc].url = "https://hl7chile.cl/fhir/ig/sigescg/StructureDefinition/TipoDoc"
+* extension[TipoDoc].valueCodeableConcept = $TipoDoc#1 "Solicitud de interconsulta SIC"
+
+* identifier.value = "FFBA223B"
+* identifier.system = "http://fonasa.cl/verificacion/identificador"
+* questionnaire = "https://hl7chile.cl/fhir/ig/sigescg/Questionnaire/NotiAtenEsp"
+* status = #completed
+
+* authored = "2024-10-16T14:30:00Z"
+
+
+* item[0].linkId = "datosPaciente"
+
+
+* item[=].item[0].linkId = "identificacionPac"
+
+
+
+
+* item[=].item[0].item[0].linkId = "runPac"
+* item[=].item[0].item[0].answer.valueString = "66.666.666"
+* item[=].item[0].item[+].linkId = "verificador"
+* item[=].item[0].item[=].answer.valueString = "k"
+
+* item[=].item[+].linkId = "nombreRegistrado"
+
+
+* item[=].item[=].item[0].linkId = "primerApellido"
+* item[=].item[=].item[0].answer.valueString = "EjemploAp"
+* item[=].item[=].item[1].linkId = "segundoApellido"
+* item[=].item[=].item[1].answer.valueString = "EjemploSegundo"
+* item[=].item[=].item[2].linkId = "nombresPac"
+* item[=].item[=].item[2].answer[0].valueString = "nombre1"
+* item[=].item[=].item[2].answer[+].valueString = "nombre2"
+
+* item[=].item[+].linkId = "direccionPac"
+
+
+* item[=].item[=].item[0].linkId = "calleNumeroDirPac"
+* item[=].item[=].item[0].answer.valueString = "Calle mia, 666, casa C"
+
+* item[=].item[=].item[1].linkId = "communaDirPac"
+* item[=].item[=].item[1].answer.valueCoding = $Comunas#13402 "Buin"
+
+
+* item[=].item[=].item[2].linkId = "provinciaDirPac"
+* item[=].item[=].item[2].answer.valueCoding.system = $Provincias#131 "Santiago"
+
+
+* item[=].item[=].item[3].linkId = "regionDirPac"
+* item[=].item[=].item[3].answer.valueCoding.system = $Regiones#13 "Metropolitana de Santiago"
+
+
+* item[=].item[+].linkId = "datoContactoPac"
+
+
+* item[=].item[=].item[0].linkId = "emailPac"
+* item[=].item[=].item[0].answer.valueString = "yo@yo.cl"
+
+* item[=].item[=].item[1].linkId = "numeroTelPac"
+* item[=].item[=].item[1].answer.valueString = "+56 9666666"
+
+* item[=].item[+].linkId = "datosDemogAdic"
+
+
+* item[=].item[=].item[0].linkId = "sexoNacimiento"
+* item[=].item[=].item[=].answer.valueCoding = $Sexo-Nac#93 "No Informado"
+
+
+* item[=].item[=].item[+].linkId = "fechaNacimiento"
+* item[=].item[=].item[=].answer.valueDate = "1980-05-22"
+
+* item[=].item[=].item[+].linkId = "edadPaciente"
+* item[=].item[=].item[=].answer.valueInteger = 35
+
+
+* item[=].item[5].linkId = "IdentificadoresCaso"
+
+
+* item[=].item[5].item[1].linkId = "numeroCaso"
+* item[=].item[5].item[1].answer.valueString = "FFBA223B"
+
+
+
+
+    

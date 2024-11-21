@@ -202,3 +202,23 @@ Description: "Codigos para tipo de documento"
 * ^experimental = false
 
 * include codes from system CSTipoDoc
+
+CodeSystem: CSPrestacion
+Id: CSPrestacion
+Title: "Códigos de prestaciones"
+Description: "Codigos para prestaciones"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^jurisdiction = urn:iso:std:iso:3166#CL
+
+* #1 "Prestacion1"
+
+ValueSet: VSPrestacion
+Id: VSPrestacion
+Title: "Códigos de prestaciones"
+Description: "Codigos para prestaciones"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system CSPrestacion
