@@ -15,11 +15,12 @@ Alias: $Exam = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSExamenes
 Alias: $Prevision = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSPrevision
 Alias: $ProbSalud = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSProbSalud
 Alias: $TipoDoc = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSTipoDoc
+Alias: $Prestacion = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSPrestacion
 
 Instance: Caso1
 InstanceOf: DatosSigesCG
-Title: "Ejemplo formulario de Creación"
-Description: "Ejemplo de datos para la creación de un formulario"
+Title: "Ejemplo formulario de Notificación de atención"
+Description: "Ejemplo de datos para la notificación de una atención"
 
 Usage: #example
 
@@ -103,7 +104,7 @@ Usage: #example
 * item[=].item[=].item[0].linkId = "codigoMarca"
 * item[=].item[=].item[=].answer.valueCoding = $Marca#01 "PRAIS"
 
-* item[=].item[=].item[=].answer.valueCoding = $Prevision#01 "FONASA"
+* item[=].item[=].item[=].answer.valueCoding = $Prevision#1 "FONASA"
 
 * item[+].linkId = "solicitudCaso"
 
@@ -151,7 +152,7 @@ Usage: #example
 
 
 * item[=].item[3].item[1].linkId = "sospechaGes"
-* item[=].item[3].item[1].answer.valueCoding.system = $Sospecha#1 "A"
+* item[=].item[3].item[1].answer.valueBoolean = true
 
 
 * item[=].item[3].item[2].linkId = "hipotesisDiagnostica"
@@ -279,10 +280,10 @@ Usage: #example
 
 
 * item[=].item[=].item[0].linkId = "emailPac"
-* item[=].item[=].item[0].answer.valueString = "yo@yo.cl"
+* item[=].item[=].item[=].answer.valueString = "yo@yo.cl"
 
-* item[=].item[=].item[1].linkId = "numeroTelPac"
-* item[=].item[=].item[1].answer.valueString = "+56 9666666"
+* item[=].item[=].item[+].linkId = "numeroTelPac"
+* item[=].item[=].item[=].answer.valueString = "+56 9666666"
 
 * item[=].item[+].linkId = "datosDemogAdic"
 
@@ -298,13 +299,42 @@ Usage: #example
 * item[=].item[=].item[=].answer.valueInteger = 35
 
 
-* item[=].item[5].linkId = "IdentificadoresCaso"
+* item[=].item[+].linkId = "IdentificadoresCaso"
 
 
-* item[=].item[5].item[1].linkId = "numeroCaso"
-* item[=].item[5].item[1].answer.valueString = "FFBA223B"
+* item[=].item[=].item[0].linkId = "numeroCaso"
+* item[=].item[=].item[0].answer.valueString = "FFBA223B"
 
 
+* item[+].linkId = "Prestacion"
 
+* item[=].item[0].linkId = "origenPrestacion"
+* item[=].item[=].item[0].linkId = "nombreOrganizacionOrg"
+* item[=].item[=].item[=].answer.valueString = "Hospital XXXX"
 
-    
+* item[=].item[0].linkId = "origenPrestacion"
+* item[=].item[=].item[+].linkId = "nombreServicioSaludOrg"
+* item[=].item[=].item[=].answer.valueString = "Servicio de Salud YYYYY"
+
+* item[=].item[+].linkId = "PrestacionEj"
+
+* item[=].item[=].item[0].linkId = "nombreOrganizacionEje"
+* item[=].item[=].item[=].answer.valueString = "Centro de Salud AAAAA"
+
+* item[=].item[=].item[+].linkId = "nombreServicioSaludEje"
+* item[=].item[=].item[=].answer.valueString = "Servicio de Salud BBBB"
+
+* item[=].item[+].linkId = "fechas"
+* item[=].item[=].item[0].linkId = "fechaInicio"
+* item[=].item[=].item[=].answer.valueDate = "2024-11-01"
+
+* item[=].item[=].item[+].linkId = "fechaFin"
+* item[=].item[=].item[=].answer.valueDate = "2024-11-15"
+
+* item[=].item[+].linkId = "tipoPrest"
+* item[=].item[=].item[0].linkId = "nombrePrestacion"
+* item[=].item[=].item[=].answer.valueString = "Prestación AAA"
+
+* item[=].item[=].item[+].linkId = "codPrestacion"
+* item[=].item[=].item[=].answer.valueCoding = $Prestacion#1 "Prestacion1"
+

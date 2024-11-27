@@ -1,0 +1,218 @@
+{
+    "resourceType": "Patient",
+    "id": "PacCert",
+    "meta": {
+      "profile": [
+        "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/PatientLE"
+      ]
+    },
+   
+    "extension": [
+      {
+        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdentidadDeGenero",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero",
+              "code": "2",
+              "display": "Femenina"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SexoBiologico",
+        "valueCodeableConcept": {
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "code": "male",
+                    "display": "Male"
+                }
+            ]
+        }
+    },
+      {
+        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+              "code": "152",
+              "display": "Chile"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/PaisOrigenMPI",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+              "code": "152",
+              "display": "Chile"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/PueblosOriginariosPerteneciente",
+        "valueBoolean": true
+      },
+      {
+        "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/PueblosAfrodescendiente",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://interoperabilidad.minsal.cl/fhir/ig/tei/CodeSystem/PueblosOriginariosCS",
+              "code": "01",
+              "display": "Mapuche"
+            }
+          ]
+        }
+      }
+    ],
+    "identifier": [
+      {
+        "use": "official",
+        "type": {
+          "extension": [
+            {
+              "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+                    "code": "152",
+                    "display": "Chile"
+                  }
+                ]
+              }
+            }
+          ],
+          "coding": [
+            {
+              "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTipoIdentificador",
+              "code": "01",
+              "display": "RUN"
+            }
+          ],
+          "text": "Rol Único Nacional"
+        },
+        "value": "66.666.666-6",
+        "system": "http://registrocivil.cl/RUN"
+      }
+    ],
+    "active": true,
+    "name": [
+      {
+        "use": "official",
+        "family": "Organa",
+        "_family": {
+          "extension": [
+            {
+              "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido",
+              "valueString": "Rosas"
+            }
+          ]
+        },
+        "given": [
+          "César",
+          "Anakin"
+        ]
+      }
+      {
+        "use" : "usual",
+        "given" : [
+          "Alberta"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "phone",
+        "value": "999999999"
+        
+      }
+    ],
+    "gender": "male",
+    "birthDate": "1996-06-06",
+    "deceasedBoolean": false,
+   "address":[
+		{
+			"extension":[
+				{
+					"url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/SituacionCalle",
+					"valueBoolean": false
+				}
+			],
+			"use": "home",
+            "line": ["Av Los Imperios 222"],
+			"_city": {
+				"extension": [
+                    {
+                        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl",
+                        "valueCodeableConcept": {
+							"coding": [
+								{
+									"system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL",
+									"code": "02101",
+									"display": "Antofagasta"
+								}
+							]
+						}
+                    }
+                ]
+			},
+			"_district": {
+				"extension": [
+					{
+                        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL",
+                                    "code": "021",
+                                    "display": "Antofagasta"
+                                }
+                            ]
+                        }
+                    }
+				]
+			},
+			"_state": {
+				"extension": [
+					{
+						"url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL",
+                                    "code": "02",
+                                    "display": "Antofagasta"
+                                }
+                            ]
+                        }
+					}
+				]
+			},
+			"_country": {
+				"extension": [
+                    {
+                        "url": "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CodPais",
+                                    "code": "152",
+                                    "display": "Chile"
+                                }
+                            ]
+                        }
+                    }
+                ]
+			}
+		}
+	]
+}

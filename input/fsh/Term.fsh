@@ -222,3 +222,33 @@ Description: "Codigos para prestaciones"
 * ^experimental = false
 
 * include codes from system CSPrestacion
+
+CodeSystem: CSDerivadoPara
+Id: CSDerivadoPara
+Title: "Códigos asociados a la derivación"
+Description: "Codigos asociados para la derivación de paciente, indicando el objetivo"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^jurisdiction = urn:iso:std:iso:3166#CL
+
+* #1 "Confirmación Diagnóstica"
+* #2 "Realizar Tratamiento"
+* #3 "A Seguimiento"
+* #4 "Control de Especialidad"
+* #5 "Otro"
+* #6 "Seguimiento"
+* #7 "Tratamiento"
+* #8 "Otro"
+* #9 "Diagnostico"
+* #10 "Rehabilitación"
+* #11 "Rehabilitación"
+
+ValueSet: VSDerivadoPara
+Id: VSDerivadoPara
+Title: "Códigos asociados a la derivación"
+Description: "Codigos asociados para la derivación de paciente, indicando el objetivo"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system CSDerivadoPara

@@ -127,12 +127,12 @@ Usage: #example
 * item[=].item[=].item[=].text = "Código de marca que el paciente posee"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].answerValueSet = "CSMarca"
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSMArca"
 
 * item[=].item[=].item[+].linkId = "acreditacionPac"
 * item[=].item[=].item[=].text = "Acreditación que posee el paciente"
 * item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "CSPrevision"
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSPrevision"
 * item[=].item[=].item[=].required = true
 
 
@@ -173,15 +173,17 @@ Usage: #example
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
+* item[=].item[=].item[0].linkId = "servicioSaludDestino"
+* item[=].item[=].item[=].text = "Nommbre del Servicio de Salud Notificador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
 * item[=].item[=].item[+].linkId = "establecimientoDestino"
 * item[=].item[=].item[=].text = "Nombre del Establecimiento de Destino"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "unidadClinicaDestino"
-* item[=].item[=].item[=].text = "Unidad Clínica Destino"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
+
 
 * item[=].item[+].linkId = "especialidades"
 * item[=].item[=].text = "Especialidades de origen y destino paciente"
@@ -208,6 +210,7 @@ Usage: #example
 * item[=].item[=].item[0].linkId = "referidoPor"
 * item[=].item[=].item[=].text = "El paciente es derivado para?"
 * item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSDerivadoPara"
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "sospechaGes"
@@ -217,15 +220,14 @@ Usage: #example
 
 * item[=].item[=].item[+].linkId = "hipotesisDiagnostica"
 * item[=].item[=].item[=].text = "Diagnóstico del cual se sospecha el paciente tiene"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "VSProbSalud"
+* item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "fundamentoDiagnostico"
 * item[=].item[=].item[=].text = "Fundamento mediante el cual se sustenta el diagnóstico presunto"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].repeats = true
+* item[=].item[=].item[=].repeats = false
 
 * item[=].item[+].linkId = "procedimientos"
 * item[=].item[=].text = "Exámenes y procedimientos de los cuales ha sido objeto  el paciente"
@@ -234,9 +236,8 @@ Usage: #example
 
 * item[=].item[=].item[0].linkId = "examenesRealizados"
 * item[=].item[=].item[=].text = "Exámenes realizados por el paciente"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "VSExamenes"
-* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = false
 * item[=].item[=].item[=].repeats = true
 
 * item[=].item[+].linkId = "IdentificadoresCaso"
@@ -247,17 +248,8 @@ Usage: #example
 * item[=].item[=].item[0].linkId = "numeroFolio"
 * item[=].item[=].item[=].text = "No de folio de la notificación"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].required = false
 
-* item[=].item[=].item[+].linkId = "numeroCaso"
-* item[=].item[=].item[=].text = "Número de caso asociado a la notificación"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[+].linkId = "estadoCaso"
-* item[=].item[=].text = "Estado del caso"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
 
 * item[=].item[=].item[0].linkId = "codEstadoCaso"
 * item[=].item[=].item[=].text = "Código del estado del caso (debiera ser solo uno en este caso)"

@@ -1,0 +1,67 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "1",
+  "meta": {
+    "profile": [
+      "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/ServiceRequestLE"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/ExtensionEstadoInterconsultaCodigoLE",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/tei/CodeSystem/CSEstadoInterconsulta",
+            "code": "1",
+            "display": "A la espera de referencia"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/ExtensionStringFundamentoPriorizacion",
+      "valueString": "Se requiere pronta confirmación para iniciar tratamiento"
+    },
+    {
+      "url": "https://interoperabilidad.minsal.cl/fhir/ig/tei/StructureDefinition/ExtensionOrigenInterconsulta",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://interoperabilidad.minsal.cl/fhir/ig/tei/CodeSystem/CSorigenInterconsulta",
+            "code": "1",
+            "display": "APS"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "draft",
+  "intent": "order",
+  "priority": "routine",
+  "subject": {
+    "reference": "http://tei-fhir.cens.cl/fhir/Patient/147"
+  },
+  "encounter": {
+    "reference": "http://tei-fhir.cens.cl/fhir/Encounter/142"
+  },
+  "requester": {
+    "reference": "http://tei-fhir.cens.cl/fhir/PractitionerRole/145"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "https://interoperabilidad.minsal.cl/fhir/ig/tei/CodeSystem/CSDerivadoParaCodigo",
+          "code": "2",
+          "display": "Control Especialista"
+        }
+      ]
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "http://tei-fhir.cens.cl/fhir/Condition/145"
+    }
+  ]
+}

@@ -124,8 +124,8 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "numeroCaso"
-* item[=].item[=].item[=].text = "Número de caso asociado a la notificación"
+* item[=].item[=].item[0].linkId = "caso"
+* item[=].item[=].item[=].text = "Caso activo asociado al paciente"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
@@ -134,35 +134,52 @@ Usage: #example
 * item[=].type = #group
 * item[=].required = true
 
-* item[=].item[0].linkId = "origenPrestacion"
-* item[=].item[=].text = "De donde se solicitó la Prestación"
+* item[=].item[+].linkId = "origenPrestacion"
+* item[=].item[=].text = "Datos de solicitud de la prestación"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "nombreOrganizacionOrg"
-* item[=].item[=].item[=].text = "Nombre de la Organización que solicita la prestación"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "nombreServicioSaludOrg"
 * item[=].item[=].item[=].text = "Nombre del Servicio de Salud que solicita la prestación"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[+].linkId = "PrestacionEj"
+* item[=].item[=].item[0].linkId = "nombreEstablecimientoOrg"
+* item[=].item[=].item[=].text = "Nombre del establecimiento que solicita la prestación"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[+].linkId = "ejecutorPrestacion"
 * item[=].item[=].text = "Donde se ejecutó la Prestación"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "nombreOrganizacionEje"
-* item[=].item[=].item[=].text = "Nombre de la Organización que ejecuta la prestación"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "nombreServicioSaludEje"
 * item[=].item[=].item[=].text = "Nombre del Servicio de Salud que ejecuta la prestación"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "nombreEstablecimientoEje"
+* item[=].item[=].item[=].text = "Nombre de la establecimiento que ejecuta la prestación"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[+].linkId = "tipoPrest"
+* item[=].item[=].text = "Tipo de prestación ejecutada"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "nombrePrestacion"
+* item[=].item[=].item[=].text = "Nombre de la Prestación en texto libre"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "codPrestacion"
+* item[=].item[=].item[=].text = "Código de la Prestación ejecutada"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSPrestacion"
+* item[=].item[=].item[=].required = false
+
 
 * item[=].item[+].linkId = "fechas"
 * item[=].item[=].text = "Fechas de ejecusión de la prestación"
@@ -174,31 +191,21 @@ Usage: #example
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].required = true
 
+* item[=].item[=].item[0].linkId = "horaInicio"
+* item[=].item[=].item[=].text = "Hora de Inicio de la Prestación"
+* item[=].item[=].item[=].type = #time
+* item[=].item[=].item[=].required = true
+
 * item[=].item[=].item[+].linkId = "fechaFin"
 * item[=].item[=].item[=].text = "Fecha de Finalización de la Prestación"
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].required = true
 
-* item[=].item[+].linkId = "tipoPrest"
-* item[=].item[=].text = "Tipo de prestación ejecutada"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "nombrePrestación"
-* item[=].item[=].item[=].text = "Nombre de la Prestación en texto libre"
-* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[+].linkId = "horaFin"
+* item[=].item[=].item[=].text = "Hora de Finalización de la Prestación"
+* item[=].item[=].item[=].type = #time
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "codPrestacion"
-* item[=].item[=].item[=].text = "Código de la Prestación ejecutada"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "VSPrestacion"
-* item[=].item[=].item[=].required = false
-
-* item[=].item[=].item[+].linkId = "nombrePrestación"
-* item[=].item[=].item[=].text = "Nombre de la Prestación en texto libre"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
 
 
 
