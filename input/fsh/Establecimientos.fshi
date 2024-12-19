@@ -1,0 +1,48 @@
+CodeSystem: CSEstablecSIGES
+Id: CSEstablecSIGES
+Title: "Códigos de Establecimientos para SIGES"
+Description: "Codigos de establecimientos según el formato de la plataforma SIGES"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^jurisdiction = urn:iso:std:iso:3166#CL
+
+* #1	"Ministerio de Salud"
+  * #2	"Fonasa Nivel Central"
+    100	Arica y Parinacota
+    * 101	Tarapacá
+    * 102	Antofagasta
+    * 103	Atacama
+    * 104	Coquimbo
+    * 105	Valparaíso San Antonio
+    * 106	Vina del Mar Quillota
+    * 107	Aconcagua
+    * 108	Metropolitano Norte
+    * 109	Metropolitano Occidente
+    * 110	Metropolitano Central
+    * 111	Metropolitano Oriente
+    * 112	Metropolitano Sur
+    * 113	Metropolitano Sur Oriente
+    * 114	O'Higgins
+    * 115	Maule
+    * 116	Nuble
+    * 117	Concepcion
+    * 126	Arauco
+    * 118	Talcahuano
+    * 119	BioBío
+    * 127	Araucania Norte
+    * 120	Araucania Sur
+    * 121	Los Ríos
+    * 122	Osorno
+    * 124	Aysén
+    * 125	Magallanes
+    * 128	Reloncaví
+    * 99	Chiloe
+    * 88	Servicio de Salud N/A
+    * 4	Direccion Regional Centro Norte
+    * 3	Direccion Regional Norte
+    * 6	Dirección Regional Centro Sur
+    * 5	Dirección Regional Metropolitana y VI Región
+    * 7	Dirección Regional Sur
+
+

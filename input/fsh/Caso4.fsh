@@ -146,7 +146,7 @@ Usage: #example
 * item[=].item[=].item[0].linkId = "problemaSalud"
 * item[=].item[=].item[=].text = "Problema de Salud Indicado"
 * item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSProbSalud"
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSProbSalud"
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "confDiag"
@@ -164,13 +164,13 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "tratamiento"
+* item[=].item[=].item[0].linkId = "tratamientoInd"
 * item[=].item[=].item[=].text = "Tratamiento indicado"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "indicaciones"
-* item[=].item[=].item[=].text = "Indicaciones al tratamiento "
+* item[=].item[=].item[=].text = "Indicaciones al tratamiento"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = false
 * item[=].item[=].item[=].repeats = true

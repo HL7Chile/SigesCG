@@ -1,7 +1,7 @@
 ///////////////////////Información instancia//////////////////////////
-Instance: SolEndoscop 
-Title: "Notificación Solicitud Endoscopía"
-Description: "Formularo Caso de Uso 3: Notificación de Solicitud de una Endoscopía"
+Instance: NotOrdQuir
+Title: "Notificación de Orden Quirúrjica"
+Description: "Formularo Caso de Uso 6: Hospital informa de protocolo quirúrjico"
 InstanceOf: Questionnaire
 Usage: #example
 
@@ -13,7 +13,7 @@ Usage: #example
 * publisher = "HL7 Chile"
 
 
-
+// Estos Datos no estan en el modelo lógico!!
 
 * item[0].linkId = "datosPaciente"
 * item[=].text = "Datos del paciente"
@@ -56,52 +56,8 @@ Usage: #example
 
 
 
-* item[+].linkId = "profesionalSolicitante"
-* item[=].text = "Datos del profesional notificador"
-* item[=].type = #group
-* item[=].required = true
-
-* item[=].item[0].linkId = "identificadorProf"
-* item[=].item[=].text = "Identificación del profesional notificador"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "runPrest"
-* item[=].item[=].item[=].text = "Número RUN de identificación del prestador"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[=].item[+].linkId = "verificadorPrest"
-* item[=].item[=].item[=].text = "Dígito verificador del RUN del prestador"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-  
-* item[=].item[+].linkId = "nombreRegistradoPrest"
-* item[=].item[=].text = "Nombre del Prestador"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "primerApellidoPrest"
-* item[=].item[=].item[=].text = "Primer apellido del prestador"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[=].item[+].linkId = "segundoApellidoPrest"
-* item[=].item[=].item[=].text = "Segundo apellido del prestador"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[=].item[+].linkId = "nombresPrest"
-* item[=].item[=].item[=].text = "Nombres del prestador"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].repeats = true
-
-
-
-
-* item[+].linkId = "solicitudAtencionPrest"
-* item[=].text = "Datos de solicitud de una atención o prestación"
+* item[+].linkId = "datosNotifQuir"
+* item[=].text = "Datos sobre la notificación asociada a la cirujía"
 * item[=].type = #group
 * item[=].required = true
 
@@ -111,23 +67,24 @@ Usage: #example
 * item[=].item[=].required = true
 
 * item[=].item[=].item[0].linkId = "nombrePrestacion"
-* item[=].item[=].item[=].text = "Nombre de la Prestación en texto libre"
+* item[=].item[=].item[=].text = "Nombre de la Prestación otorgada en texto libre"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "codPrestacion"
-* item[=].item[=].item[=].text = "Código de la Prestación solicitada"
+* item[=].item[=].item[=].text = "Código de la Prestación otorgada"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSPrestacion"
 * item[=].item[=].item[=].required = false
 
-* item[=].item[+].linkId = "fechaSol"
-* item[=].item[=].text = "Fecha de la solicitud de orden"
+
+* item[=].item[+].linkId = "fechas"
+* item[=].item[=].text = "Fechas asociadas a la prestación otorgada"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "fechaSolOrd"
-* item[=].item[=].item[=].text = "Fecha en la cual la orden fue solicitada"
+* item[=].item[=].item[0].linkId = "fechaEjec"
+* item[=].item[=].item[=].text = "Fecha en la cual la prestación fue otorgada"
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].required = true
 
@@ -168,10 +125,7 @@ Usage: #example
 * item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
 * item[=].item[=].item[=].required = true
 
-
-* item[=].item[=].item[+].linkId = "hipotesisDiagnostica"
-* item[=].item[=].item[=].text = "Diagnóstico del cual se sospecha el paciente tiene"
+* item[=].item[=].item[+].linkId = "hipDiag"
+* item[=].item[=].item[=].text = "Hipótesis Diagnóstica"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = false
-
-  
+* item[=].item[=].item[=].required = true

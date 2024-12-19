@@ -226,7 +226,7 @@ Usage: #example
 * item[=].item[=].item[+].linkId = "fundamentoDiagnostico"
 * item[=].item[=].item[=].text = "Fundamento mediante el cual se sustenta el diagnóstico presunto"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].required = false
 * item[=].item[=].item[=].repeats = false
 
 * item[=].item[+].linkId = "procedimientos"
