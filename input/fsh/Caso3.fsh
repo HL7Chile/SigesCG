@@ -1,6 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: SolEndoscop 
-Title: "Notificación Solicitud Endoscopía"
+Title: "Notificación Solicitud Endoscopía (Orden de Atención)"
 Description: "Formularo Caso de Uso 3: Notificación de Solicitud de una Endoscopía"
 InstanceOf: Questionnaire
 Usage: #example
@@ -126,9 +126,16 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
+
+
 * item[=].item[=].item[0].linkId = "fechaSolOrd"
 * item[=].item[=].item[=].text = "Fecha en la cual la orden fue solicitada"
 * item[=].item[=].item[=].type = #date
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "horaSolOrd"
+* item[=].item[=].item[=].text = "Hora en la cual la orden fue solicitada"
+* item[=].item[=].item[=].type = #time
 * item[=].item[=].item[=].required = true
 
 * item[=].item[+].linkId = "origenDest"
@@ -168,10 +175,18 @@ Usage: #example
 * item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
 * item[=].item[=].item[=].required = true
 
+* item[=].item[=].item[0].linkId = "referidoPorOtro"
+* item[=].item[=].item[=].text = "Texto de otra opción para referido por"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].enableWhen[0].question = "referidoPor"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[0].answerCoding.system = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
+* item[=].item[=].item[=].enableWhen[0].answerCoding.code = #5
 
 * item[=].item[=].item[+].linkId = "hipotesisDiagnostica"
 * item[=].item[=].item[=].text = "Diagnóstico del cual se sospecha el paciente tiene"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = false
+* item[=].item[=].item[=].required = true
 
   

@@ -1,7 +1,7 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: CreacionCaso 
-Title: "Creación de Caso"
-Description: "Formularo Caso de Uso 1: Creación de Caso"
+Title: "Solicitud de Consulta"
+Description: "Formularo Caso de Uso 1: Solicitud de una Consulta"
 InstanceOf: Questionnaire
 Usage: #example
 
@@ -163,7 +163,7 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "servicioSaludNotificacion"
+* item[=].item[=].item[0].linkId = "servicioSaludOrigen"
 * item[=].item[=].item[=].text = "Nommbre del Servicio de Salud Notificador"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true

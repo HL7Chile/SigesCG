@@ -1,7 +1,7 @@
 ///////////////////////Información instancia//////////////////////////
-Instance: EtapificacionSG 
-Title: "Notificación de Etapificación"
-Description: "Formularo Caso de Uso 5: Notificación de ejecusión de procedimientos previos a la cirugía"
+Instance: CierreNotifSG 
+Title: "Notificación de Cierre de Caso"
+Description: "Formularo Caso de Uso 5: Notificación de cierre de caso GES"
 InstanceOf: Questionnaire
 Usage: #example
 
@@ -53,7 +53,46 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].repeats = true
 
+* item[+].linkId = "profesionalNotificador"
+* item[=].text = "Datos del profesional notificador"
+* item[=].type = #group
+* item[=].required = true
 
+* item[=].item[0].linkId = "identificadorProf"
+* item[=].item[=].text = "Identificación del profesional notificador"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "runPrest"
+* item[=].item[=].item[=].text = "Número RUN de identificación del prestador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "verificadorPrest"
+* item[=].item[=].item[=].text = "Dígito verificador del RUN del prestador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+  
+* item[=].item[+].linkId = "nombreRegistradoPrest"
+* item[=].item[=].text = "Nombre del Prestador"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "primerApellidoPrest"
+* item[=].item[=].item[=].text = "Primer apellido del prestador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "segundoApellidoPrest"
+* item[=].item[=].item[=].text = "Segundo apellido del prestador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "nombresPrest"
+* item[=].item[=].item[=].text = "Nombres del prestador"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].repeats = true
 
 
 * item[+].linkId = "Procedimiento"

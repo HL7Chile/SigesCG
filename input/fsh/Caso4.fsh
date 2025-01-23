@@ -51,8 +51,8 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].repeats = true
 
-* item[+].linkId = "profesionalSolicitante"
-* item[=].text = "Datos del profesional notificador"
+* item[+].linkId = "profesionalAtiende"
+* item[=].text = "Datos del profesional que atiende"
 * item[=].type = #group
 * item[=].required = true
 
@@ -149,13 +149,18 @@ Usage: #example
 * item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSProbSalud"
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "confDiag"
-* item[=].item[=].item[=].text = "Estado de la confirmación del diagnóstico"
+* item[=].item[=].item[+].linkId = "confGes"
+* item[=].item[=].item[=].text = "Estado de la confirmación del diagnóstico si es GES"
 * item[=].item[=].item[=].type = #boolean
 * item[=].item[=].item[=].required = true
 
 * item[=].item[=].item[+].linkId = "fundDiag"
 * item[=].item[=].item[=].text = "Fundamento diagnóstico expresado"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = false
+
+* item[=].item[=].item[+].linkId = "Diagostico"
+* item[=].item[=].item[=].text = "Diagnóstico determinado"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = false
 
@@ -165,12 +170,7 @@ Usage: #example
 * item[=].item[=].required = true
 
 * item[=].item[=].item[0].linkId = "tratamientoInd"
-* item[=].item[=].item[=].text = "Tratamiento indicado"
+* item[=].item[=].item[=].text = "Tratamientos e indicaciones señaladas"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "indicaciones"
-* item[=].item[=].item[=].text = "Indicaciones al tratamiento"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = false
-* item[=].item[=].item[=].repeats = true

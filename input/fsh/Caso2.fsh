@@ -1,6 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: NotiAtenEsp
-Title: "Notificacion Atención Especialidad"
+Title: "Notificacion Atención Especialidad (Prestación Otorgada)"
 Description: "Formularo Caso de Uso 2: Atención Especialidad"
 InstanceOf: Questionnaire
 Usage: #example

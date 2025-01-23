@@ -239,10 +239,9 @@ Description: "Codigos asociados para la derivación de paciente, indicando el ob
 * #5 "Otro"
 * #6 "Seguimiento"
 * #7 "Tratamiento"
-* #8 "Otro"
 * #9 "Diagnostico"
 * #10 "Rehabilitación"
-* #11 "Rehabilitación"
+
 
 ValueSet: VSDerivadoPara
 Id: VSDerivadoPara
