@@ -133,7 +133,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "horaSolOrd"
+* item[=].item[=].item[+].linkId = "horaSolOrd"
 * item[=].item[=].item[=].text = "Hora en la cual la orden fue solicitada"
 * item[=].item[=].item[=].type = #time
 * item[=].item[=].item[=].required = true
@@ -175,7 +175,7 @@ Usage: #example
 * item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "referidoPorOtro"
+* item[=].item[=].item[+].linkId = "referidoPorOtro"
 * item[=].item[=].item[=].text = "Texto de otra opción para referido por"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true

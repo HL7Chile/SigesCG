@@ -1,7 +1,7 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: CierreNotifSG 
 Title: "Notificación de Cierre de Caso"
-Description: "Formularo Caso de Uso 5: Notificación de cierre de caso GES"
+Description: "Formularo Caso de Uso 5: Notificación de cierre de caso GES / Excepción de GO / Cierre de GO"
 InstanceOf: Questionnaire
 Usage: #example
 
@@ -53,8 +53,72 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].repeats = true
 
-* item[+].linkId = "profesionalNotificador"
-* item[=].text = "Datos del profesional notificador"
+* item[+].linkId = "datosCierre"
+* item[=].text = "Datos asociados al cierre del caso o a la Excpción de Garantía "
+* item[=].type = #group
+* item[=].required = true
+
+* item[=].item[0].linkId = "fechas"
+* item[=].item[=].text = "Fechas asociadas a la prestación otorgada"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "fechaCierre"
+* item[=].item[=].item[=].text = "Fecha en la cual se cierra el caso o GO"
+* item[=].item[=].item[=].type = #date
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "horaCierre"
+* item[=].item[=].item[=].text = "Hora en la cual se cierra el caso o GO"
+* item[=].item[=].item[=].type = #time
+* item[=].item[=].item[=].required = true
+
+* item[=].item[+].linkId = "datosEstablecimiento"
+* item[=].item[=].text = "Datos del establecimiento notificador"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "nombreServicioSalud"
+* item[=].item[=].item[=].text = "Nombre del Servicio de Salud que notifica"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "nombreEstablecimiento"
+* item[=].item[=].item[=].text = "Nombre del establecimiento que notifica"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+
+* item[=].item[+].linkId = "tipoCierre"
+* item[=].item[=].text = "Tipo de Cierre o Excepción de Garantía"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "opciones"
+* item[=].item[=].item[=].text = "Opciones para Cierre o Extensión"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSOpcionesCierre"
+* item[=].item[=].item[=].required = true
+
+
+
+* item[=].item[+].linkId = "probSalud"
+* item[=].item[=].text = "Problema o diagnóstico notificado"
+* item[=].item[=].type = #group
+* item[=].item[=].required = true
+
+* item[=].item[=].item[0].linkId = "problemaSalud"
+* item[=].item[=].item[=].text = "Problema de Salud Indicado"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSProbSalud"
+* item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "Diagostico"
+* item[=].item[=].item[=].text = "Diagnóstico determinado"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = false
+
+* item[+].linkId = "profesionalResponsable"
+* item[=].text = "Datos del profesional responsable"
 * item[=].type = #group
 * item[=].required = true
 
@@ -95,54 +159,10 @@ Usage: #example
 * item[=].item[=].item[=].repeats = true
 
 
-* item[+].linkId = "Procedimiento"
-* item[=].text = "Datos sobre la ejecusión de prestaciones ejecutadas en paciente"
-* item[=].type = #group
-* item[=].required = true
-* item[=].repeats = true
-
-* item[=].item[+].linkId = "tipoPrestSol"
-* item[=].item[=].text = "Tipo de prestación solicitada"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "nombrePrestacion"
-* item[=].item[=].item[=].text = "Nombre de la Prestación otorgada en texto libre"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[=].item[+].linkId = "codPrestacion"
-* item[=].item[=].item[=].text = "Código de la Prestación otorgada"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSPrestacion"
-* item[=].item[=].item[=].required = false
-
-* item[=].item[=].item[+].linkId = "numFolioPrestacion"
-* item[=].item[=].item[=].text = "Número del folio de la pestación otorgada"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[+].linkId = "fechas"
-* item[=].item[=].text = "Fechas asociadas a la prestación otorgada"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "fechaEjec"
-* item[=].item[=].item[=].text = "Fecha en la cual la prestación fue otorgada"
-* item[=].item[=].item[=].type = #date
-* item[=].item[=].item[=].required = true
 
 
 
 
-* item[=].item[+].linkId = "razonDeriv"
-* item[=].item[=].text = "Datos que justifican la derivación"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "referidoPor"
-* item[=].item[=].item[=].text = "El paciente es derivado para?"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
-* item[=].item[=].item[=].required = true
+
 

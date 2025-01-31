@@ -39,7 +39,7 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "primerApellido"
+* item[=].item[=].item[0].linkId = "primerApellido"
 * item[=].item[=].item[=].text = "Primer apellido del paciente"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
@@ -119,7 +119,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 
 
-* item[=].item[+].linkId = "IdentificadoresCaso"
+* item[=].item[+].linkId = "IdentificadorProblema"
 * item[=].item[=].text = "Identificadores asociados al caso"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
@@ -139,30 +139,16 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "nombreServicioSaludOrg"
-* item[=].item[=].item[=].text = "Nombre del Servicio de Salud que solicita la prestación"
+* item[=].item[=].item[0].linkId = "nombreServicioSaludOtorga"
+* item[=].item[=].item[=].text = "Nombre del Servicio de Salud que otorga la prestación"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "nombreEstablecimientoOrg"
-* item[=].item[=].item[=].text = "Nombre del establecimiento que solicita la prestación"
+* item[=].item[=].item[+].linkId = "nombreEstablecimientoOtorga"
+* item[=].item[=].item[=].text = "Nombre del establecimiento que otorga la prestación"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[+].linkId = "ejecutorPrestacion"
-* item[=].item[=].text = "Donde se ejecutó la Prestación"
-* item[=].item[=].type = #group
-* item[=].item[=].required = true
-
-* item[=].item[=].item[+].linkId = "nombreServicioSaludEje"
-* item[=].item[=].item[=].text = "Nombre del Servicio de Salud que ejecuta la prestación"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
-
-* item[=].item[=].item[0].linkId = "nombreEstablecimientoEje"
-* item[=].item[=].item[=].text = "Nombre de la establecimiento que ejecuta la prestación"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].required = true
 
 * item[=].item[+].linkId = "tipoPrest"
 * item[=].item[=].text = "Tipo de prestación ejecutada"
@@ -191,7 +177,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #date
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "horaInicio"
+* item[=].item[=].item[+].linkId = "horaInicio"
 * item[=].item[=].item[=].text = "Hora de Inicio de la Prestación"
 * item[=].item[=].item[=].type = #time
 * item[=].item[=].item[=].required = true
@@ -199,12 +185,9 @@ Usage: #example
 * item[=].item[=].item[+].linkId = "fechaFin"
 * item[=].item[=].item[=].text = "Fecha de Finalización de la Prestación"
 * item[=].item[=].item[=].type = #date
-* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].required = false
 
-* item[=].item[=].item[+].linkId = "horaFin"
-* item[=].item[=].item[=].text = "Hora de Finalización de la Prestación"
-* item[=].item[=].item[=].type = #time
-* item[=].item[=].item[=].required = true
+
 
 
 

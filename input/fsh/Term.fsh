@@ -251,3 +251,27 @@ Description: "Codigos asociados para la derivación de paciente, indicando el ob
 * ^experimental = false
 
 * include codes from system CSDerivadoPara
+
+
+CodeSystem: CSOpcionesCierre
+Id: CSOpcionesCierre
+Title: "Códigos opciones para Cierre o Extensión"
+Description: "Codigos asociados para el cierre o la extención de garantía"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^jurisdiction = urn:iso:std:iso:3166#CL
+
+* #1 "Cierra Caso"
+* #2 "Excepción Garantía"
+* #3 "Cierre Garantía Oportunidad"
+
+
+ValueSet: VSOpcionesCierre
+Id: VSOpcionesCierre
+Title: "Códigos opciones para Cierre o Extensión"
+Description: "Codigos asociados para el cierre o la extención de garantía"
+* ^status = #active
+* ^experimental = false
+
+* include codes from system CSOpcionesCierre

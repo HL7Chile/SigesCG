@@ -1,6 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
-Instance: CreacionCaso 
-Title: "Solicitud de Consulta"
+Instance: SolicitudI
+Title: "Solicitud de Interconsulta"
 Description: "Formularo Caso de Uso 1: Solicitud de una Consulta"
 InstanceOf: Questionnaire
 Usage: #example
@@ -173,7 +173,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[=].item[0].linkId = "servicioSaludDestino"
+* item[=].item[=].item[+].linkId = "servicioSaludDestino"
 * item[=].item[=].item[=].text = "Nommbre del Servicio de Salud Notificador"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
@@ -210,8 +210,17 @@ Usage: #example
 * item[=].item[=].item[0].linkId = "referidoPor"
 * item[=].item[=].item[=].text = "El paciente es derivado para?"
 * item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSDerivadoPara"
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
 * item[=].item[=].item[=].required = true
+
+* item[=].item[=].item[+].linkId = "referidoPorOtro"
+* item[=].item[=].item[=].text = "Texto de otra opción para referido por"
+* item[=].item[=].item[=].type = #string
+* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].enableWhen[0].question = "referidoPor"
+* item[=].item[=].item[=].enableWhen[=].operator = #=
+* item[=].item[=].item[=].enableWhen[0].answerCoding.system = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
+* item[=].item[=].item[=].enableWhen[0].answerCoding.code = #5
 
 * item[=].item[=].item[+].linkId = "sospechaGes"
 * item[=].item[=].item[=].text = "Definición de patología GES de sospecha"
@@ -228,6 +237,12 @@ Usage: #example
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = false
 * item[=].item[=].item[=].repeats = false
+
+* item[=].item[=].item[+].linkId = "problemaSalud"
+* item[=].item[=].item[=].text = "Problema de Salud Indicado"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].answerValueSet = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSProbSalud"
+* item[=].item[=].item[=].required = true
 
 * item[=].item[+].linkId = "procedimientos"
 * item[=].item[=].text = "Exámenes y procedimientos de los cuales ha sido objeto  el paciente"
@@ -251,9 +266,9 @@ Usage: #example
 * item[=].item[=].item[=].required = false
 
 
-* item[=].item[=].item[0].linkId = "codEstadoCaso"
-* item[=].item[=].item[=].text = "Código del estado del caso (debiera ser solo uno en este caso)"
-* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[+].linkId = "codEstadoCaso"
+* item[=].item[=].item[=].text = "Código del estado del caso asignado. Es un valor único e irrepetible"
+* item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
 * item[+].linkId = "profesionalNotificador"

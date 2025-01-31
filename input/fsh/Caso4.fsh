@@ -37,7 +37,7 @@ Usage: #example
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
 
-* item[=].item[=].item[+].linkId = "primerApellido"
+* item[=].item[=].item[0].linkId = "primerApellido"
 * item[=].item[=].item[=].text = "Primer apellido del paciente"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
@@ -107,7 +107,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
 
-* item[=].item[0].linkId = "fechas"
+* item[=].item[+].linkId = "fechas"
 * item[=].item[=].text = "Fecha en la cual se notifica el informe"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true
