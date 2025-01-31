@@ -164,7 +164,7 @@ Description: "Codigos para problemas de salud de paciente"
 * #85	"ENFERMEDAD DE ALZHEIMER Y OTRAS DEMENCIAS"
 * #81	"Cáncer de Pulmón en Personas de 15 Años y Más"
 * #82	"Cáncer de Tiroides en personas de 15 años y más"
-* #86	"Atención Integral de Salud en Agresión Sexual Aguda "
+* #86	"Atención Integral de Salud en Agresión Sexual Aguda"
 * #83	"Cáncer Renal en personas de 15 años y más"
 * #84	"MIELOMA MÚLTIPLE EN PERSONAS DE 15 AÑOS Y MÁS"
 * #87	"Rehabilitación SARS COV-2"
@@ -188,11 +188,11 @@ Description: "Codigos para tipo de documento"
 * ^caseSensitive = true
 * ^jurisdiction = urn:iso:std:iso:3166#CL
 
-* #1	"Solicitud de interconsulta	SIC"
-* #2	"Informe Proceso Diagnostico IPD"
-* #3	"Orden de Atención OA"
-* #10    "Prestacion Otorgada	PO"
-* #15    "Programa Especial PE"
+* #1 "Solicitud de interconsulta SIC"
+* #2 "Informe Proceso Diagnostico IPD"
+* #3 "Orden de Atención OA"
+* #10 "Prestacion Otorgada	PO"
+* #15  "Programa Especial PE"
 
 ValueSet: VSTipoDoc
 Id: VSTipoDoc

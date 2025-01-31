@@ -219,7 +219,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].enableWhen[0].question = "referidoPor"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
-* item[=].item[=].item[=].enableWhen[0].answerCoding.system = "https://hl7chile.cl/fhir/ig/sigescg/ValueSet/VSDerivadoPara"
+* item[=].item[=].item[=].enableWhen[0].answerCoding.system = "https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSDerivadoPara"
 * item[=].item[=].item[=].enableWhen[0].answerCoding.code = #5
 
 * item[=].item[=].item[+].linkId = "sospechaGes"

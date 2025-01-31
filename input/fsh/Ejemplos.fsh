@@ -244,7 +244,7 @@ Usage: #example
 
 
 
-* item[=].item[0].item[0].linkId = "runPac"
+* item[=].item[=].item[0].linkId = "runPac"
 * item[=].item[=].item[=].answer.valueString = "66.666.666"
 * item[=].item[=].item[+].linkId = "verificador"
 * item[=].item[=].item[=].answer.valueString = "k"
@@ -318,7 +318,12 @@ Usage: #example
 * item[=].item[=].item[+].linkId = "nombreServicioSaludOtorga"
 * item[=].item[=].item[=].answer.valueString = "Servicio de Salud YYYYY"
 
+* item[=].item[+].linkId = "tipoPrest"
+* item[=].item[=].item[0].linkId = "nombrePrestacion"
+* item[=].item[=].item[=].answer.valueString = "Prestación AAA"
 
+* item[=].item[=].item[+].linkId = "codPrestacion"
+* item[=].item[=].item[=].answer.valueCoding = $Prestacion#1 "Prestacion1"
 
 * item[=].item[+].linkId = "fechas"
 * item[=].item[=].item[0].linkId = "fechaInicio"
@@ -331,12 +336,7 @@ Usage: #example
 * item[=].item[=].item[+].linkId = "fechaFin"
 * item[=].item[=].item[=].answer.valueDate = "2024-11-15"
 
-* item[=].item[+].linkId = "tipoPrest"
-* item[=].item[=].item[0].linkId = "nombrePrestacion"
-* item[=].item[=].item[=].answer.valueString = "Prestación AAA"
 
-* item[=].item[=].item[+].linkId = "codPrestacion"
-* item[=].item[=].item[=].answer.valueCoding = $Prestacion#1 "Prestacion1"
 
 
 
@@ -406,7 +406,7 @@ Usage: #example
 * item[=].item[=].item[=].answer.valueString = "El"
 
 
-* item[+].linkId = "SolicitudAtencionPrest"
+* item[+].linkId = "solicitudAtencionPrest"
 * item[=].item[+].linkId = "tipoPrestSol"
 
 * item[=].item[=].item[0].linkId = "nombrePrestacion"
@@ -481,7 +481,7 @@ Usage: #example
 * item[=].item[=].item[2].answer[0].valueString = "nombre1"
 * item[=].item[=].item[2].answer[+].valueString = "nombre2"
 
-* item[+].linkId = "rofesionalAtiende"
+* item[+].linkId = "profesionalAtiende"
 
 
 * item[=].item[0].linkId = "identificadorProf"
@@ -531,7 +531,7 @@ Usage: #example
 * item[=].item[+].linkId = "problemaDiag"
 * item[=].item[=].item[0].linkId = "problemaSalud"
 * item[=].item[=].item[=].answer.valueCoding = $ProbSalud#27 "CÁNCER GÁSTRICO"
-* item[=].item[=].item[+].linkId = "confDiag"
+* item[=].item[=].item[+].linkId = "confGes"
 * item[=].item[=].item[=].answer.valueBoolean = true
 * item[=].item[=].item[+].linkId = "fundDiag"
 * item[=].item[=].item[=].answer.valueString = "Examenes realizados confirman sospecha"
