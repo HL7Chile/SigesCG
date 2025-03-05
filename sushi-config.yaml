@@ -6,8 +6,8 @@
 id: hl7.fhir.cl.sigescg
 canonical: https://hl7chile.cl/fhir/ig/sigescg
 name: sigescg
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
+title: Notificación de Caso GES
+description: Esta Guía de Implementación, emula en formularos el proceso de seguimiento de casos GES (en principio Cáncer Gástrico) entre prestadores de salud y FONASA
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html

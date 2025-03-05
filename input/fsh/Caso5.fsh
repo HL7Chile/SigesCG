@@ -1,5 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
-Instance: CierreNotifSG 
+Instance: CierreNotifSG
+//Id: datos-sigges-cierre-caso
 Title: "Notificación de Cierre de Caso"
 Description: "Formularo Caso de Uso 5: Notificación de cierre de caso GES / Excepción de GO / Cierre de GO"
 InstanceOf: Questionnaire
@@ -17,7 +18,7 @@ Usage: #example
 
 * item[0].linkId = "datosPaciente"
 * item[=].text = "Datos del paciente"
-* item[=].type = #group
+* item[=].type = #group     
 * item[=].required = true
 
 * item[=].item[0].linkId = "identificacionPac"
@@ -54,7 +55,7 @@ Usage: #example
 * item[=].item[=].item[=].repeats = true
 
 * item[+].linkId = "datosCierre"
-* item[=].text = "Datos asociados al cierre del caso o a la Excpción de Garantía "
+* item[=].text = "Datos asociados al cierre del caso o a la Excpción de Garantía"
 * item[=].type = #group
 * item[=].required = true
 

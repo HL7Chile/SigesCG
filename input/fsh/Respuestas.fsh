@@ -10,7 +10,7 @@ Description:    "Perfil de datos relacionados con el seguimiento de un Caso de N
 * identifier.value 1..1 MS
 * identifier ^short = "Identificador único para este set de respuestas"
 * identifier ^definition = "Identificador único que será asignado a este set de respuestas."
-* identifier.system ^short = "Namespace del valor de identificación. "
+* identifier.system ^short = "Namespace del valor de identificación."
 * identifier.system ^definition = "Identifica la URL sobre la cual se describe el set de valores que es único."
 * identifier.value ^short = "Valor del identificador único. Se recomienda sea el número de caso"
 

@@ -1,5 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
-Instance: ProsDiag 
+Instance: ProsDiag
+//Id: datos-sigges-notificacion-diagnostica
 Title: "Notificación de Informe Proceso Diagnóstico"
 Description: "Formularo Caso de Uso 4: Notificación de Informe Proceso Diagnóstico"
 InstanceOf: Questionnaire

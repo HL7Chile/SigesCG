@@ -1,5 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: SolEndoscop 
+//Id: datos-sigges-solicitud-endoscopia
 Title: "Notificación Solicitud Endoscopía (Orden de Atención)"
 Description: "Formularo Caso de Uso 3: Notificación de Solicitud de una Endoscopía"
 InstanceOf: Questionnaire

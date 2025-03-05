@@ -10,16 +10,15 @@ Alias: $Sospecha = https://fonasa.cl/sospecha
 Alias: $Examen = https://fonasa.cl/examen
 Alias: $Estado-Caso = https://fonasa.cl/estadocaso
 Alias: $Marca = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSMArca
-Alias: $Marca = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSMArca
 Alias: $Exam = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSExamenes
 Alias: $Prevision = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSPrevision
-Alias: $ProbSalud = https://hl7chile.cl/fhir/ig/sigescg/Codesystem/CSProbSalud
+Alias: $ProbSalud = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSProbSalud
 Alias: $TipoDoc = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSTipoDoc
 Alias: $Prestacion = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSPrestacion
 Alias: $ReferidoPor = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSDerivadoPara
 Alias: $Opciones = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSOpcionesCierre
 
-Instance: SolicitudInter
+Instance: Caso1
 InstanceOf: DatosSigesCG 
 Title: "Ejemplo formulario de Solicitud de Interconsulta"
 Description: "Ejemplo de datos para la solicitud de una interconsulta  (Caso 1)"
@@ -104,12 +103,12 @@ Usage: #example
 * item[=].item[+].linkId = "garantiaPac"
 
 * item[=].item[=].item[0].linkId = "codigoMarca"
-* item[=].item[=].item[=].answer.valueCoding = $Marca#01 "PRAIS"
+* item[=].item[=].item[=].answer.valueCoding = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSMarca#01 "PRAIS"
 
-* item[=].item[=].item[+].linkId = "creditacionPac"
-* item[=].item[=].item[=].answer.valueCoding = $Prevision#1 "FONASA"
+* item[=].item[=].item[+].linkId = "acreditacionPac"
+* item[=].item[=].item[=].answer.valueCoding = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSPrevision#01 "FONASA"
 
-* item[+].linkId = "solicitudInter"
+* item[+].linkId = "solicitudCaso"
 
 
 * item[=].item[0].linkId = "fechas"
@@ -142,7 +141,7 @@ Usage: #example
 
 
 * item[=].item[=].item[0].linkId = "especialidadOrigen"
-* item[=].item[=].item[=].answer.valueCoding.system = $Especialidades#01 "Anatomía Patológica"
+* item[=].item[=].item[=].answer.valueCoding = $Especialidades#1 "Anatomía Patológica"
 
 
 * item[=].item[=].item[+].linkId = "especialidadDestino"
@@ -153,7 +152,8 @@ Usage: #example
 
 
 * item[=].item[=].item[0].linkId = "referidoPor"
-* item[=].item[=].item[=].answer.valueCoding.system = $Razones#05 "Otro"
+* item[=].item[=].item[=].answer.valueCoding = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSDerivadoPara#5 "Otro"
+
 
 * item[=].item[=].item[+].linkId = "referidoPorOtro"
 * item[=].item[=].item[=].answer.valueString = "Cancer inespecífico"
@@ -167,6 +167,9 @@ Usage: #example
 
 * item[=].item[=].item[+].linkId = "fundamentoDiagnostico"
 * item[=].item[=].item[=].answer.valueString = "Resultado examenes"
+
+* item[=].item[=].item[+].linkId = "problemaSalud"
+* item[=].item[=].item[=].answer.valueCoding = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSProbSalud#6 "IABETES MELLITUS TIPO 1"
 
 * item[=].item[+].linkId = "procedimientos"
 
@@ -186,7 +189,7 @@ Usage: #example
 
 
 * item[=].item[=].item[+].linkId = "codEstadoCaso"
-* item[=].item[=].item[=].answer.valueCoding.system = $Estado-Caso#01 "progreso"
+* item[=].item[=].item[=].answer.valueString = "F33244A"
 
 
 * item[+].linkId = "profesionalNotificador"
@@ -311,12 +314,12 @@ Usage: #example
 * item[+].linkId = "Prestacion"
 
 * item[=].item[0].linkId = "origenPrestacion"
-* item[=].item[=].item[0].linkId = "nombreEstablecimientoOtorga"
-* item[=].item[=].item[=].answer.valueString = "Hospital XXXX"
 
-
-* item[=].item[=].item[+].linkId = "nombreServicioSaludOtorga"
+* item[=].item[=].item[0].linkId = "nombreServicioSaludOtorga"
 * item[=].item[=].item[=].answer.valueString = "Servicio de Salud YYYYY"
+
+* item[=].item[=].item[+].linkId = "nombreEstablecimientoOtorga"
+* item[=].item[=].item[=].answer.valueString = "Hospital XXXX"
 
 * item[=].item[+].linkId = "tipoPrest"
 * item[=].item[=].item[0].linkId = "nombrePrestacion"
@@ -530,7 +533,7 @@ Usage: #example
 
 * item[=].item[+].linkId = "problemaDiag"
 * item[=].item[=].item[0].linkId = "problemaSalud"
-* item[=].item[=].item[=].answer.valueCoding = $ProbSalud#27 "CÁNCER GÁSTRICO"
+* item[=].item[=].item[=].answer.valueCoding = https://hl7chile.cl/fhir/ig/sigescg/CodeSystem/CSProbSalud#27 "CÁNCER GÁSTRICO"
 * item[=].item[=].item[+].linkId = "confGes"
 * item[=].item[=].item[=].answer.valueBoolean = true
 * item[=].item[=].item[+].linkId = "fundDiag"
@@ -541,8 +544,7 @@ Usage: #example
 * item[=].item[+].linkId = "tratamiento"
 * item[=].item[=].item[0].linkId = "tratamientoInd"
 * item[=].item[=].item[=].answer.valueString = "Tratamiento 1"
-* item[=].item[=].item[+].linkId = "indicaciones"
-* item[=].item[=].item[=].answer.valueString = "Indicaciones 1"
+
 
 
 Instance: Caso5
@@ -557,7 +559,7 @@ Usage: #example
 
 * identifier.value = "FFBA223A"
 * identifier.system = "http://fonasa.cl/verificacion/identificador"
-* questionnaire = "https://hl7chile.cl/fhir/ig/sigescg/Questionnaire/Etapificacion"
+* questionnaire = "https://hl7chile.cl/fhir/ig/sigescg/Questionnaire/CierreNotifSG"
 * status = #completed
 
 * authored = "2024-12-19T14:30:00Z"

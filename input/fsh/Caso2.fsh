@@ -1,5 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: NotiAtenEsp
+//Id: datos-sigges-notificacion-atencion
 Title: "Notificacion Atención Especialidad (Prestación Otorgada)"
 Description: "Formularo Caso de Uso 2: Atención Especialidad"
 InstanceOf: Questionnaire
@@ -87,7 +88,7 @@ Usage: #example
 * item[=].item[=].required = true
 * item[=].item[=].repeats = true
 
-* item[=].item[=].item[+].linkId = "emailPac"
+* item[=].item[=].item[0].linkId = "emailPac"
 * item[=].item[=].item[=].text = "Correo electrónico del paciente"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].required = true
@@ -134,7 +135,7 @@ Usage: #example
 * item[=].type = #group
 * item[=].required = true
 
-* item[=].item[+].linkId = "origenPrestacion"
+* item[=].item[0].linkId = "origenPrestacion"
 * item[=].item[=].text = "Datos de solicitud de la prestación"
 * item[=].item[=].type = #group
 * item[=].item[=].required = true

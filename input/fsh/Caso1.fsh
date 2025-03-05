@@ -1,5 +1,6 @@
 ///////////////////////Información instancia//////////////////////////
 Instance: SolicitudI
+//Id: datos-sigges-solicitud
 Title: "Solicitud de Interconsulta"
 Description: "Formularo Caso de Uso 1: Solicitud de una Consulta"
 InstanceOf: Questionnaire
